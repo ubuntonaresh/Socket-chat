@@ -35,6 +35,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ["*", "placifyindia.com", "89.117.37.186"]
 
+SECRET_KEY = config("SECRET_KEY")
 
 ROOT_URLCONF = f'{config("PROJECT_NAME")}.urls'
 
@@ -49,11 +50,6 @@ ASGI_APPLICATION = f'{config("PROJECT_NAME")}.routing.application'
 # SECRET_KEY = 'e9lgp7glzo&n(l3v&jkwhyt8ye*!o=cwh7y6o@b2a^$muup!#1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-<<<<<<< HEAD
-=======
-
-SECRET_KEY = config("SECRET_KEY")
->>>>>>> 68ea0ea680a3c417c1beab2621cf44ddf874ac47
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # During development only
