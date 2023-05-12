@@ -12,6 +12,19 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+from pathlib import Path
+from decouple import config
+
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+ALLOWED_HOSTS = ["*", "placifyindia.com", "89.117.37.186"]
+
+ROOT_URLCONF = f'{config("PROJECT_NAME")}.urls'
+
+WSGI_APPLICATION = f'{config("PROJECT_NAME")}.wsgi.application'
+
+ASGI_APPLICATION = f'{config("PROJECT_NAME")}.routing.application'
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,9 +36,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e9lgp7glzo&n(l3v&jkwhyt8ye*!o=cwh7y6o@b2a^$muup!#1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["*", "placifyindia.com", "89.117.37.186"]
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # During development only
@@ -84,9 +94,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ChatServerPlayground.wsgi.application'
 
-ASGI_APPLICATION = 'ChatServerPlayground.routing.application'
 
 CHANNEL_LAYERS = {
     'default': {
