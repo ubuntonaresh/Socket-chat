@@ -90,7 +90,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ChatServerPlayground.urls'
 
 TEMPLATES = [
     {
