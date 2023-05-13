@@ -151,20 +151,30 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760 # 10mb = 10 * 1024 *1024
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'media'),
-]
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+#     os.path.join(BASE_DIR, 'media'),
+# ]
+# STATIC_URL = '/static/'
+# MEDIA_URL = '/media/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
 TEMP = os.path.join(BASE_DIR, 'media_cdn/temp')
 
-BASE_URL = "http://127.0.0.1:8000"
+# BASE_URL = "http://127.0.0.1:8000"
 
 
 
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# Static files (CSS, JavaScript, Images)
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_cdn')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media_cdn')
+STATIC_URL = '/static/'
+
+# Extra places for collect static to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
