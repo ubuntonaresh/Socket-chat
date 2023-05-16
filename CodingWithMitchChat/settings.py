@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["89.117.37.186", "*" , "placifyindia.com"]
 
+CSRF_TRUSTED_ORIGINS = ['https://*.www.placifyindia.com', 'https://www.placifyindia.com','https://placifyindia.com', 'http://*.www.placifyindia.com', "http://89.117.37.186"]
+
+
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # During development only
 
