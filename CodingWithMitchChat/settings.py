@@ -25,9 +25,9 @@ SECRET_KEY = 'e9lgp7glzo&n(l3v&jkwhyt8ye*!o=cwh7y6o@b2a^$muup!#1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["89.117.37.186", "*" , "placifyindia.com"]
+ALLOWED_HOSTS = ['89.117.37.186', 'whosthere.co', 'www.whosthere.co', '127.0.0.1', "*"]
 
-CSRF_TRUSTED_ORIGINS = ['https://*.www.placifyindia.com', 'https://www.placifyindia.com','https://placifyindia.com', 'http://*.www.placifyindia.com', "http://89.117.37.186"]
+CSRF_TRUSTED_ORIGINS = ['https://*.www.whosthere.co', 'https://www.whosthere.co','https://whosthere.co', 'http://*.www.whosthere.co', "http://89.117.37.186"]
 
 
 if DEBUG:
